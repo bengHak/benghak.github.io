@@ -1,0 +1,60 @@
+body {
+    font-size: 16px;
+}
+
+.container {
+    width: 1024px;
+    padding: 0;
+}
+
+
+section {
+    margin: 47px 0px;
+}
+.section {
+    margin: 47px auto;
+    width: 50%;
+}
+
+.info .section {
+    width: 456px;
+}
+
+.info .section + .section {
+    margin-left: 24px;
+}
+
+.info {
+    display: flex;
+    margin: auto;
+    width: 940px;
+}
+
+.section p {
+    margin: 15px 0px 0px;
+    color: #060113;
+    font-size: 16px;
+    font-weight:700;
+    line-height: 24px;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+.section > h1 {
+    font-size: 2em;
+}
+
+div ._1A_1:first-child {
+    width: 420px;
+    border-top: 1px solid pink;
+    border-left: 1px solid pink;
+    font-size: 18px;
+}
+
+div ._1A_2 {
+    width: 420px;
+    border-bottom: 1px solid pink;
+    font-size: 18px;
+}
