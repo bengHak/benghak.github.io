@@ -14,20 +14,20 @@ baseurl: /
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: General Store
+title: ByungHak의 Blog
 
 # Short description of your site
-description: A virtual proof that name is awesome!
+description: ByungHak의 개발 블로그
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
+  # Resources:
+  #   - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
+  #   - Learn markdown: "http://www.markdowntutorial.com/"
+  #   - GitHub Pages: "https://pages.github.com/"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -41,15 +41,15 @@ avatar: "/img/avatar-icon.png"
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#F5F5F5"
-navbar-text-col: "#404040"
-navbar-children-col: "#F5F5F5"
+navbar-col: "#003399"
+navbar-text-col: "#CCFFCC"
+navbar-children-col: "#003399"
 page-col: "#FFFFFF"
 link-col: "#008AFF"
 hover-col: "#0085A1"
-footer-col: "#F5F5F5"
+footer-col: "#003399"
 footer-text-col: "#777777"
-footer-link-col: "#404040"
+footer-link-col: "#CCFFCC"
 
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
@@ -63,7 +63,7 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
+  name: Ko ByungHak
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
@@ -81,7 +81,7 @@ social-network-links:
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
-#  instagram: deanat78
+  instagram: byunghak_ko
 #  youtube: user/deanat78
 #  spotify: yourname
 #  telephone: +14159998888
