@@ -2,7 +2,7 @@
 layout: post
 title: 2019 SW마에스트로 10기 과정 설명회 후기
 subtitle: 
-tags: [develop]
+tags: [develop, 대외활동]
 comments: true
 ---
 

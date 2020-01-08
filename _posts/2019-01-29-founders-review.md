@@ -2,7 +2,7 @@
 layout: post
 title: 대학생 블록체인 인턴십 연계 프로그램 Founders 2019 후기
 subtitle: 
-tags: [develop]
+tags: [develop, blockchain, 대외활동]
 comments: true
 ---
 진행기간: 2019.01.14(월) ~ 2019.01.18(금)
