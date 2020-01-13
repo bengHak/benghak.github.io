@@ -31,8 +31,8 @@ http://pub.dartlang.org/flutter
 
 ```yaml
 dependencies:
-	english_words
-	english_words: ^3.2.1
+  english_words
+  english_words: ^3.2.1
 ```
 
 **설치방법**
