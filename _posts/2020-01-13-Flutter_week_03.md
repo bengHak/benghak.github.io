@@ -109,7 +109,6 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 아래의 OOP 개념들을 설명했다.
 
 - List
-
 - IF/ELSE
 - Classes and Objects
 - Abstraction
