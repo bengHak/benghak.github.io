@@ -18,7 +18,7 @@ comments: true
 
 
 
-**<Hot Reload 하는 법>**
+**Hot Reload 하는 법**
 
 1. 지원되는 [Flutter 편집기](https://flutter.dev/docs/get-started/editor) 또는 터미널 창 에서 앱을 실행하십시오 . 물리적 또는 가상 장치가 대상이 될 수 있습니다. **디버그 모드의 Flutter 앱만 핫 리로드 할 수 있습니다.**
 2. 프로젝트에서 Dart 파일 중 하나를 수정하십시오. 대부분의 코드 변경 유형은 핫 리로드 할 수 있습니다. 핫 재시작이 필요한 변경 사항 목록은 [제한 사항을](https://flutter.dev/docs/development/tools/hot-reload#limitations) 참조하십시오 .
@@ -36,7 +36,7 @@ comments: true
 
 
 
-**<Hot Reload와 Hot Start의 차이>**
+**Hot Reload와 Hot Start의 차이**
 
 - **Hot Reload**: state를 유지한 체 바뀐 위젯을 다시 그려준다.
 - **Hot Start**: state를 초기화하고 다시 위젯을 그린다.
