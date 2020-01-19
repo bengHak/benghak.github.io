@@ -691,3 +691,36 @@ int multiply(int n1, int n2) {
 
 ```
 
+
+
+
+
+# Multi-Screen Apps Using Routes and Navigation
+
+각 페이지를 route로 표현할 수 있다. initialRoute를 사용하고 home을 사용하면 안된다.
+
+```dart
+import 'package:flutter/material.dart';
+import 'screen0.dart';
+import 'screen1.dart';
+import 'screen2.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      // home: Screen0(),  <== 이렇게 하면 안된다.
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Screen0(),
+        '/first': (context) => Screen1(),
+        '/second': (context) => Screen2(),
+      },
+    );
+  }
+}
+
+```
+
