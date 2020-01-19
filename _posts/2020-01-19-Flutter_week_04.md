@@ -1,3 +1,11 @@
+---
+layout: post
+title: Flutter 스터디 4주차 요약
+subtitle: The Complete 2020 Flutter Development Bootcamp with Dart - created by Angela Yu
+tags: [study, Flutter, application, develop, DSC]
+comments: true
+---
+
 # 플러터 테마
 
 플러터 테마에 대해 궁금하다면 cookbook을 보면 좋다고 한다.  
