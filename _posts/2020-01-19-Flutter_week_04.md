@@ -731,7 +731,7 @@ class MyApp extends StatelessWidget {
 위의 방법을 활용하여 아래와 같이 두 페이지의 앱을 완성했다.
 
 <p float="left">
-  <img src="/Users/gobyeonghag/Documents/github_blog/beautiful-jekyll/img/flutter_review/bmi_result_1.png" alt="bmi_result_1" width="45%" />
-  <img src="/Users/gobyeonghag/Documents/github_blog/beautiful-jekyll/img/flutter_review/bmi_result_2.png" alt="bmi_result_2" width="45%" />
+  <img src="../img/flutter_review/bmi_result_1.png" alt="bmi_result_1" width="45%" />
+  <img src="../img/flutter_review/bmi_result_2.png" alt="bmi_result_2" width="45%" />
 </p>
 
