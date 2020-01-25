@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MNIST로 Active Learning 하기
+title: MNIST로 액티브 러닝(Active Learning) 하기
 subtitle: Labeling 시간을 줄여보자
 tags: [study, machinelearning, deeplearning, ML, active learning, data science]
 comments: true
