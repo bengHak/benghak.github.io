@@ -9,7 +9,7 @@ use_math: true
 
 
 
-> 이 포스트는 tensorflow 
+> 이 포스트는 tensorflow 1.15.0 버전을 기반으로 작성되었습니다.
 
 # MNIST로 Active Learning 하기
 
