@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MNIST로 Active Learning 하기
+title: MNIST로 액티브 러닝(Active Learning) 하기
 subtitle: Labeling 시간을 줄여보자
 tags: [study, machinelearning, deeplearning, ML, active learning, data science]
 comments: true
@@ -9,7 +9,8 @@ use_math: true
 
 
 
-> 이 포스트는 tensorflow 1.15.0 버전을 기반으로 작성되었습니다.
+> 이 포스트는 tensorflow 1.15.0 버전을 기반으로 작성되었습니다.  
+> 해당 포스트는 Andy Bosyi의 포스트를 번역한 내용입니다. https://towardsdatascience.com/active-learning-on-mnist-saving-on-labeling-f3971994c7ba
 
 # MNIST로 Active Learning 하기
 
@@ -364,7 +365,4 @@ Experiment Accuracy
 
 물론 이 접근방식은 연산 자원의 과도한 사용과 초기 모델 평가와 혼합된 데이터 라벨에 특별한 절차가 필요하다는 사실과 같은 단점을 가지고 있다. 또한 테스트를 위한 데이터에도 라벨을 붙여야 한다. 그러나 라벨의 비용이 높은 경우(특히 NLP, CV 프로젝트의 경우) 이 방법은 상당한 양의 자원을 절약하고 더 나은 프로젝트 결과를 가져올 수 있다.'
 
-
-
-> 해당 포스트는 다음의 포스트를 번역한 내용입니다. https://towardsdatascience.com/active-learning-on-mnist-saving-on-labeling-f3971994c7ba
 
