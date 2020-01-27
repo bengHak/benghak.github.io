@@ -6,8 +6,8 @@ subtitle:
 
 ### My name is Byunghak Ko  
 I have the following qualities:
-- C / C++ / Python / Javascript
-- React / Django / Tensoflow   
+- Language: C / C++ / Python / Javascript / Dart
+- Framework: React / Django / Tensoflow / Flutter   
 
 ---
 
