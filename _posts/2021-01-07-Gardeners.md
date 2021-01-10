@@ -22,10 +22,9 @@ use_math: true
 ## 정원사들 프로젝트 진행은 다음과 같습니다.
 
 1. 하루에 한 번 커밋하는 것을 목표로 한다. (커밋한 내용이 Slack에 업데이트 된다.)
-
 2. 커밋과 함께 배운 내용들을 정리하여 TIL에 작성한다.
 
-<img src='../img/gardeners/slack.png' width='100%'>
+<img src='../img/gardeners/slack.png' width='100%'>_커밋하면 위와 같이 슬랙 메시지가 자동으로 생성된다._
 
 # 정원사들 프로젝트를 도와주는 시스템
 
@@ -39,8 +38,19 @@ use_math: true
 ## 왜 굳이 카카오워크 Bot을 사용했나
 
 1. 슬랙 알림이 있지만 슬랙을 불편해하는 멤버가 있었음
-
 2. 새롭게 생긴 카카오워크에 대한 개인적인 호기심
+
+## 카카오워크 알림 봇 개발 가이드
+
+카카오워크 Bot을 사용하는 방법은 생각보다 어렵지 않았습니다. 가이드 문서를 읽어가면서 아래 작업들을 했습니다.  
+(가이드문서: https://docs.kakaoi.ai/kakao_work/botdevguide/process/)
+
+- Users: https://docs.kakaoi.ai/kakao_work/webapireference/users/
+- Conversations: https://docs.kakaoi.ai/kakao_work/webapireference/conversations/
+- Messages: https://docs.kakaoi.ai/kakao_work/webapireference/messages/
+
+가이드 문서를 통해 Bot 개발하는 것은 재밌는 경험이었으나, 카카오워크 자체의 안정성이 떨어진다는 것을 느꼈습니다. 간혹 채팅을 보냈지만 상대방이 늦게 받는다거나 단톡방을 개설해도 제대로 보이지 않는 등의 불편한 점들이 있었습니다.  
+카카오톡에 익숙한 학우들을 대상으로 하는 것이 아니었다면 Slack으로 알림을 보내지 않았을까,,,
 
 # 프로젝트 구성요소
 
@@ -53,17 +63,59 @@ use_math: true
 6. Kakaowork Bot - 커밋한 상태에 따라 사용자들에게 동기부여 연락 보내기
 ```
 
-# 카카오워크 알림 봇
+위 프로젝트 구성요소 중 가장 시간을 많이 할애한 것은 도커였습니다. 이전의 정원사들 프로젝트도 도커를 통해 제가 구현하지 않아도 손쉽게 사용할 수 있었기 때문에 "docker-compose up" 같이 한 줄의 명령어로 위의 모든 프로그램들이 한번에 동작하기를 바랬습니다.
 
-카카오워크 Bot을 사용하는 방법은 생각보다 어렵지 않았습니다. 가이드 문서를 읽어가면서 아래 작업들을 했습니다.  
-(가이드문서: https://docs.kakaoi.ai/kakao_work/botdevguide/process/)
+아래는 Docker-compose.yml이다. 이 부분에서 가장 힘들었던 것은 환경변수 설정이었습니다. 단순히 입력하는 것이 많아서,,, 혹시 더 효율적인 방법을 아신다면 아래의 깃헙 레포에서 이슈 달아주시면 감사하겠습니다 ㅠㅠ
 
-- Users: https://docs.kakaoi.ai/kakao_work/webapireference/users/
-- Conversations: https://docs.kakaoi.ai/kakao_work/webapireference/conversations/
-- Messages: https://docs.kakaoi.ai/kakao_work/webapireference/messages/
+```yaml
+version: "3"
 
-가이드 문서를 통해 Bot 개발하는 것은 재밌는 경험이었으나, 카카오워크 자체의 안정성이 떨어진다는 것을 느꼈습니다. 간혹 채팅을 보냈지만 상대방이 늦게 받는다거나 단톡방을 개설해도 제대로 보이지 않는 등의 불편한 점들이 있었습니다.  
-카카오톡에 익숙한 학우들을 대상으로 하는 것이 아니었다면 Slack으로 알림을 보내지 않았을까,,,
+services:
+  db:
+    image: postgres:13
+    container_name: postgresql
+    restart: always
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker/data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8
+      - TZ=Asia/Seoul
+  node:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: express_task
+    restart: on-failure
+    working_dir: "/app"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - KAKAOWORK_API=${KAKAOWORK_API}
+      - KAKAOWORK_CONVERSATION_ID=${KAKAOWORK_CONVERSATION_ID}
+      - SLACK_API_TOKEN=${SLACK_API_TOKEN}
+      - SLACK_CHANNEL_ID=${SLACK_CHANNEL_ID}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_PORT=${DB_PORT}
+      - DB_HOST=${DB_HOST}
+      - MEMBER_LIST=${MEMBER_LIST}
+      - MEMBER_LIST_GITHUB=${MEMBER_LIST_GITHUB}
+      - TZ=Asia/Seoul
+    command: >
+      bash -c "npm install && mkdir -p log && cron && node app.js"
+    depends_on:
+      - db
+```
 
 # 마무리
 
